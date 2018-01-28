@@ -1,0 +1,107 @@
+need to use define also - constant
+
+function findprotien($item, $quantity){
+
+  switch($item){
+      case "egg":
+      $egg=8*$quantity;
+      echo "the nutrition per gram in egg is ".$egg." final";
+      break;
+    
+      case "soy":
+      $soy=53*$quantity;
+      echo "the nutrition per gram in soy is ".$soy." final";
+      break;
+      
+      case "lentils":
+      $lentils=20*$quantity;
+      echo "the nutrition per gram in lentils is ".$lentils." final";
+      break;    
+    }
+
+}
+
+findprotien("egg", 3);
+
+/* Next Code */
+/* Next Code - check Global Variable Use */
+
+define("Conversion_Surcharge", 50.02, false);
+
+$US_rates = 64.08;
+$output_price;
+
+
+function currency_conversion($country, $amount){
+  Global $US_rates, $output_price;
+  
+  if($country=="India")
+   echo $amount * $US_rates."<br>";
+      
+  
+  else if($country=="US")
+    {  $output_price = $amount * 1 * Conversion_Surcharge;
+         echo "country is US ".$output_price."<br>";}
+  
+  else if($country=="UK")
+    {
+      $output_price = $amount * $GLOBALS['US_rates'];
+      echo "country is UK ".$output_price;
+    }
+      
+      else 
+      echo " there is no country";
+      
+
+}
+
+
+currency_conversion("India",2);
+currency_conversion("US",2);
+currency_conversion("UK",4);
+
+/* Next Code - For Loops and functions */
+
+define("Conversion_Surcharge", 50.02);
+
+$US_rates = 64.08;
+$output_price;
+
+for ($i=0;$i<=5;$i++){
+ 
+  // echo " value of i is $i <br>";
+  
+}
+
+
+function currency_conversion($country, $amount=7){
+  Global $US_rates, $output_price;
+  
+  if($country=="India")
+   return $amount * $US_rates."<br>";
+}
+
+echo currency_conversion("India",20);
+echo currency_conversion("India");
+
+// New Code 
+$country = array("UK","France","AmsterDam","Switzerland","US",);
+
+$countryA = array("UK"=>1,"France"=>2,"AmsterDam"=>3,"Switzerland"=>4,"US"=>5);
+
+//echo $countryA['UK'];
+
+//echo count($country);
+
+for($i=0;$i<4;$i++){
+   
+  // echo $country[$i];
+  
+}
+
+$countryA = array("UK"=>1,"France"=>2,"AmsterDam"=>3,"Switzerland"=>4,"US"=>5);
+foreach($countryA as $x=>$x_value){
+echo $x."<br>".$x_value."<br>";
+
+}
+
